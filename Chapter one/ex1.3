@@ -1,0 +1,12 @@
+# Assuming all three numbers being distinct.
+
+(define square x
+	(* x x))
+(define sos x y z
+		(+ (square x) (square y) (square z)))
+(define smallest x y z
+	(cond ((and (< x y) (< x z)) x)
+          ((and (< y x) (< y z)) y)
+          (else z)))
+(define (myFun x y z)
+	(- (sos x y z) (square (smallest x y z))))
